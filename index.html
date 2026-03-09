@@ -1,122 +1,815 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>@jabopiti</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="@jabopiti">
-	<meta name="keywords" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jacob Bo Lueg Tiedemann · Product Leader & Technologist</title>
+  <meta name="description" content="Jacob Bo Lueg Tiedemann — Product leader and technologist based in Hamburg. Pragmatic, communicative, analytical, creative. Speaker and writer.">
 
-	<!-- Favicon -->   
-	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-	<link rel="shortcut icon" href="/img/favicon.ico">
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="shortcut icon" href="img/favicon.ico">
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133735449-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-		gtag('config', 'UA-133735449-1');
-	</script>
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,400i,600,600i,700" rel="stylesheet">
+    :root {
+      --bg:        #FDFAF6;
+      --surface:   #FFFFFF;
+      --ink:       #1C1917;
+      --ink-soft:  #57534E;
+      --ink-muted: #A8A29E;
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/flaticon.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/magnific-popup.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
+      --coral:     #FF6B6B;
+      --teal:      #2DD4BF;
+      --yellow:    #FCD34D;
+      --lavender:  #A78BFA;
+      --mint:      #86EFAC;
+      --peach:     #FDBA74;
 
+      --coral-light:    #FFF1F1;
+      --teal-light:     #F0FFFE;
+      --yellow-light:   #FFFDF0;
+      --lavender-light: #F5F3FF;
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+      --radius:    20px;
+      --radius-sm: 12px;
+      --radius-xs: 8px;
 
+      --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md:  0 8px 32px rgba(0,0,0,0.08);
+      --shadow-lg:  0 20px 60px rgba(0,0,0,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    /* ─── Nav ──────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      padding: 1.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(253, 250, 246, 0.82);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: box-shadow 0.3s;
+    }
+
+    .nav.scrolled { box-shadow: 0 1px 0 rgba(0,0,0,0.08); }
+
+    .nav-logo {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: -0.03em;
+      text-decoration: none;
+      color: var(--ink);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--ink-soft);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ─── Hero ─────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding: 9rem 2.5rem 5rem;
+    }
+
+    .hero-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 5rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--ink-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--coral);
+    }
+
+    .hero-name {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-name .accent { color: var(--coral); }
+
+    .hero-bio {
+      font-size: 1.1rem;
+      color: var(--ink-soft);
+      max-width: 520px;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    /* Trait tags */
+    .traits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .trait {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border-radius: 100px;
+    }
+
+    .t-coral    { background: #FFE8E8; color: #B91C1C; }
+    .t-teal     { background: #CCFBF1; color: #0D9488; }
+    .t-yellow   { background: #FEF9C3; color: #92400E; }
+    .t-lavender { background: #EDE9FE; color: #6D28D9; }
+    .t-mint     { background: #DCFCE7; color: #15803D; }
+    .t-peach    { background: #FFEDD5; color: #C2410C; }
+
+    /* CTA buttons */
+    .hero-cta { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.625rem;
+      border-radius: 100px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+
+    .btn-dark {
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--ink);
+      border: 2px solid var(--ink);
+    }
+
+    /* Hero photo stack */
+    .hero-photo {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 480px;
+    }
+
+    .photo-slab {
+      position: absolute;
+      width: 340px;
+      height: 420px;
+      border-radius: var(--radius);
+    }
+
+    .photo-slab-1 {
+      background: var(--yellow);
+      transform: rotate(5deg) translateX(12px);
+    }
+
+    .photo-slab-2 {
+      background: var(--teal);
+      opacity: 0.35;
+      transform: rotate(-3deg) translateX(-8px) translateY(8px);
+    }
+
+    .photo-frame {
+      position: relative;
+      width: 320px;
+      height: 400px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    /* ─── Section shell ─────────────────────────────────── */
+    .section {
+      padding: 6rem 2.5rem;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(1.75rem, 3vw, 2.625rem);
+      letter-spacing: -0.035em;
+      line-height: 1.15;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── What I Do cards ───────────────────────────────── */
+    .what-section { background: var(--surface); }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      padding: 2rem 1.75rem;
+      border-radius: var(--radius);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .card-coral    { background: var(--coral-light); }
+    .card-teal     { background: var(--teal-light); }
+    .card-yellow   { background: var(--yellow-light); }
+    .card-lavender { background: var(--lavender-light); }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-xs);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .ci-coral    { background: var(--coral); }
+    .ci-teal     { background: var(--teal); }
+    .ci-yellow   { background: var(--yellow); }
+    .ci-lavender { background: var(--lavender); }
+
+    .card-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.625rem;
+    }
+
+    .card-text {
+      font-size: 0.875rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* ─── Speaking & Writing ────────────────────────────── */
+    .sw-section { background: var(--bg); }
+
+    .sw-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .sw-col-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.375rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+    }
+
+    .sw-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-coral    { background: var(--coral); }
+    .dot-teal     { background: var(--teal); }
+
+    .sw-items { display: flex; flex-direction: column; gap: 0.875rem; }
+
+    .sw-item {
+      padding: 1.125rem 1.375rem;
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      border-left: 3px solid transparent;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .sw-item:hover {
+      transform: translateX(5px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sw-item-coral { border-left-color: var(--coral); }
+    .sw-item-teal  { border-left-color: var(--teal); }
+
+    .sw-item-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .sw-item-meta {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+    }
+
+    .see-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      margin-top: 1.375rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--ink);
+      border-bottom: 2px solid currentColor;
+      padding-bottom: 1px;
+      transition: opacity 0.2s;
+    }
+
+    .see-more:hover { opacity: 0.55; }
+
+    /* ─── Connect ───────────────────────────────────────── */
+    .connect-section {
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+    }
+
+    .connect-title {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(2.25rem, 5vw, 4rem);
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      margin-bottom: 1rem;
+    }
+
+    .connect-title .accent-yellow { color: var(--yellow); }
+
+    .connect-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.55);
+      max-width: 460px;
+      margin: 0 auto 3rem;
+      line-height: 1.75;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.875rem;
+    }
+
+    .social-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .social-pill:hover {
+      background: rgba(255,255,255,0.2);
+      transform: translateY(-2px);
+    }
+
+    /* ─── Footer ────────────────────────────────────────── */
+    .footer {
+      background: var(--ink);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 2rem 2.5rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer a:hover { color: #fff; }
+
+    /* ─── Reveal animation ──────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── Responsive ────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .cards { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero-photo { order: -1; height: 360px; }
+      .photo-slab { width: 260px; height: 320px; }
+      .photo-frame { width: 240px; height: 300px; }
+
+      .hero-eyebrow { justify-content: center; }
+      .traits       { justify-content: center; }
+      .hero-cta     { justify-content: center; }
+
+      .sw-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+
+    @media (max-width: 640px) {
+      .nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .section { padding: 4.5rem 1.5rem; }
+      .hero { padding: 8rem 1.5rem 4rem; }
+      .cards { grid-template-columns: 1fr; }
+      .connect-section { padding: 4.5rem 1.5rem; }
+    }
+  </style>
 </head>
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
 
-	<!-- Hero section start -->
-	<section class="hero-section spad">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-10 offset-xl-1">
-					<div class="row">
-						<div class="col-lg-7">
-							<div class="hero-text">
-								<h2>Jacob Bo Lueg Tiedemann</h2>
-								<p>I am an experienced product leader who crafts impactful products and the empowered teams behind them - valuing pragmatism and a human-centered over a siloed approach. Occasionally I speak and write about product and platform strategy and my adventures in socio-technical systems.</p>
-							</div>
-							<!--<div class="hero-info">
-								<h2>General Info</h2>
-								<ul>
-									<li><span>Date of Birth</span></li>
-									<li><span>Address</span>Hamburg, Germany</li>
-									<li><span>E-mail</span>/li>
-									<li><span>Phone </span></li>
-								</ul>
-							</div>-->
-						</div>
-						<div class="col-lg-5">
-							<figure class="hero-image">
-								<img src="img/picture.jpg" alt="5">
-							</figure>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Hero section end -->
+  <!-- ── Nav ──────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">@jabopiti</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#what">What I do</a></li>
+      <li><a href="#speaking">Speaking & Writing</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+  </nav>
 
-	<!-- Social links section start -->
-	<div class="social-section">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-xl-10 offset-xl-1">
-					<div class="social-link-warp">
-						<div class="social-links">
-							<a href="https://www.linkedin.com/in/luegtiedemann/"><i class="fa fa-linkedin"></i></a>
-							<a href="https://www.xing.com/profile/JacobBo_Tiedemann"><i class="fa fa-xing"></i></a>
-							<a href="https://speakerdeck.com/jabopiti"><i class="fa fa-slideshare"></i></a>
-						</div>
-						<h2 class="hidden-md hidden-sm">Cheers.</h2>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>	
-	<!-- Social links section end -->
+  <!-- ── Hero ─────────────────────────────────────────── -->
+  <section class="hero" id="about">
+    <div class="hero-inner">
 
-	<!-- Footer section start -->
-	<footer class="footer-section">
-		<div class="container text-center">
-			<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> | <a href="imprint.html">Impressum</a> | <a href="privacypolicy.html">Datenschutzerklärung</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</div>
-		</div>
-	</footer>
-	<!-- Footer section end -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">Hamburg, Germany</div>
 
+        <h1 class="hero-name">
+          Jacob<br>
+          Bo Lueg<br>
+          <span class="accent">Tiedemann</span>
+        </h1>
 
-	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-2.1.4.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/magnific-popup.min.js"></script>
-	<script src="js/circle-progress.min.js"></script>
-	<script src="js/main.js"></script>
+        <p class="hero-bio">
+          I craft impactful products and the empowered teams behind them —
+          valuing pragmatism and a human-centered approach over silos and dogma.
+          I also speak and write about product strategy and socio-technical systems.
+        </p>
+
+        <div class="traits">
+          <span class="trait t-coral">Pragmatic</span>
+          <span class="trait t-teal">Communicative</span>
+          <span class="trait t-yellow">Analytical</span>
+          <span class="trait t-lavender">Creative</span>
+          <span class="trait t-mint">Speaker</span>
+          <span class="trait t-peach">Writer</span>
+        </div>
+
+        <div class="hero-cta">
+          <a href="https://www.linkedin.com/in/luegtiedemann/" class="btn btn-dark" target="_blank" rel="noopener">
+            Connect on LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#speaking" class="btn btn-ghost">My work</a>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <div class="photo-slab photo-slab-1"></div>
+        <div class="photo-slab photo-slab-2"></div>
+        <div class="photo-frame">
+          <img src="img/picture.jpg" alt="Jacob Bo Lueg Tiedemann">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── What I Do ─────────────────────────────────────── -->
+  <section class="section what-section" id="what">
+    <div class="container">
+      <p class="section-label">What I do</p>
+      <h2 class="section-title">Where I add value</h2>
+
+      <div class="cards">
+
+        <div class="card card-coral reveal">
+          <div class="card-icon ci-coral">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/>
+              <line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+              <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Product Leadership</h3>
+          <p class="card-text">Setting vision, shaping strategy, and building the empowered teams that ship products people actually want to use.</p>
+        </div>
+
+        <div class="card card-teal reveal">
+          <div class="card-icon ci-teal">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Platform & Tech Strategy</h3>
+          <p class="card-text">Navigating complex socio-technical systems and bridging business ambition with engineering reality — with clarity.</p>
+        </div>
+
+        <div class="card card-yellow reveal">
+          <div class="card-icon ci-yellow">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Team Building</h3>
+          <p class="card-text">Creating conditions where product, engineering, and design can do their best work — together, with trust and purpose.</p>
+        </div>
+
+        <div class="card card-lavender reveal">
+          <div class="card-icon ci-lavender">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/>
+              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <h3 class="card-title">Thought Leadership</h3>
+          <p class="card-text">Speaking and writing about product strategy, platform thinking, and the messy human side of building technology.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Speaking & Writing ────────────────────────────── -->
+  <section class="section sw-section" id="speaking">
+    <div class="container">
+      <p class="section-label">Speaking & Writing</p>
+      <h2 class="section-title">Sharing what I learn</h2>
+
+      <div class="sw-grid">
+
+        <!-- Speaking -->
+        <div>
+          <h3 class="sw-col-title">
+            <span class="sw-dot dot-coral"></span>
+            Speaking
+          </h3>
+
+          <div class="sw-items">
+            <div class="sw-item sw-item-coral reveal">
+              <div class="sw-item-title">Product & Platform Strategy</div>
+              <div class="sw-item-meta">Keynotes · Panels · Workshops</div>
+            </div>
+            <div class="sw-item sw-item-coral reveal">
+              <div class="sw-item-title">Socio-technical Systems</div>
+              <div class="sw-item-meta">Conference talks · Internal sessions</div>
+            </div>
+            <div class="sw-item sw-item-coral reveal">
+              <div class="sw-item-title">Empowered Product Teams</div>
+              <div class="sw-item-meta">Leadership events · Meetups</div>
+            </div>
+          </div>
+
+          <a href="https://speakerdeck.com/jabopiti" class="see-more" target="_blank" rel="noopener">
+            View slide decks
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Writing -->
+        <div>
+          <h3 class="sw-col-title">
+            <span class="sw-dot dot-teal"></span>
+            Writing
+          </h3>
+
+          <div class="sw-items">
+            <div class="sw-item sw-item-teal reveal">
+              <div class="sw-item-title">Product Strategy & Vision</div>
+              <div class="sw-item-meta">Essays · Frameworks · Perspectives</div>
+            </div>
+            <div class="sw-item sw-item-teal reveal">
+              <div class="sw-item-title">Platform Thinking</div>
+              <div class="sw-item-meta">Deep dives · Mental models</div>
+            </div>
+            <div class="sw-item sw-item-teal reveal">
+              <div class="sw-item-title">Adventures in Tech & People</div>
+              <div class="sw-item-meta">Reflections · Lessons learned</div>
+            </div>
+          </div>
+
+          <a href="https://www.linkedin.com/in/luegtiedemann/" class="see-more" target="_blank" rel="noopener">
+            Read on LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Connect ───────────────────────────────────────── -->
+  <section class="section connect-section" id="connect">
+    <div class="container">
+      <p class="section-label" style="color:rgba(255,255,255,0.4)">Say hello</p>
+      <h2 class="connect-title">
+        Let's <span class="accent-yellow">connect.</span>
+      </h2>
+      <p class="connect-sub">
+        Whether it's about product, tech, a speaking invitation,
+        or just to exchange ideas — I'm always up for a good conversation.
+      </p>
+
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/luegtiedemann/" class="social-pill" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+
+        <a href="https://www.xing.com/profile/JacobBo_Tiedemann" class="social-pill" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M6 6 L2 12 L6 18 L9 18 L5 12 L9 6Z"/>
+            <path d="M13 2 L8 11 L13 20 L16 20 L11 11 L16 2Z"/>
+          </svg>
+          Xing
+        </a>
+
+        <a href="https://speakerdeck.com/jabopiti" class="social-pill" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 3H2v18l4-4h16V3zm-8 10l-4-4H7v8l3-3 4 4 5-5V7l-5 5z"/>
+          </svg>
+          Speaker Deck
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ───────────────────────────────────────── -->
+  <footer class="footer">
+    <p>
+      &copy; <span id="year"></span> Jacob Bo Lueg Tiedemann · Hamburg, Germany
+      &nbsp;&middot;&nbsp;
+      <a href="imprint.html">Impressum</a>
+      &nbsp;&middot;&nbsp;
+      <a href="privacypolicy.html">Datenschutzerklärung</a>
+    </p>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Nav scroll shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // Scroll-reveal
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 4) * 80}ms`;
+      revealObserver.observe(el);
+    });
+
+    // Smooth anchor scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
