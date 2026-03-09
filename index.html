@@ -22,31 +22,30 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #FDFAF6;
+      --bg:        #F6F6F3;
       --surface:   #FFFFFF;
-      --ink:       #1C1917;
-      --ink-soft:  #57534E;
-      --ink-muted: #A8A29E;
+      --ink:       #0C0C0B;
+      --ink-soft:  #464440;
+      --ink-muted: #9A9894;
 
-      --coral:     #FF6B6B;
-      --teal:      #2DD4BF;
-      --yellow:    #FCD34D;
-      --lavender:  #A78BFA;
-      --mint:      #86EFAC;
-      --peach:     #FDBA74;
+      --blue:         #2563EB;
+      --blue-light:   #EFF6FF;
+      --green:        #059669;
+      --green-light:  #ECFDF5;
+      --amber:        #D97706;
+      --amber-light:  #FFFBEB;
+      --violet:       #7C3AED;
+      --violet-light: #F5F3FF;
+      --teal:         #0D9488;
+      --teal-light:   #F0FDFA;
 
-      --coral-light:    #FFF1F1;
-      --teal-light:     #F0FFFE;
-      --yellow-light:   #FFFDF0;
-      --lavender-light: #F5F3FF;
+      --radius:    16px;
+      --radius-sm: 10px;
+      --radius-xs: 6px;
 
-      --radius:    20px;
-      --radius-sm: 12px;
-      --radius-xs: 8px;
-
-      --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
-      --shadow-md:  0 8px 32px rgba(0,0,0,0.08);
-      --shadow-lg:  0 20px 60px rgba(0,0,0,0.12);
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.04), 0 2px 6px rgba(0,0,0,0.03);
+      --shadow-md:  0 4px 16px rgba(0,0,0,0.06), 0 8px 32px rgba(0,0,0,0.05);
+      --shadow-lg:  0 8px 32px rgba(0,0,0,0.08), 0 20px 60px rgba(0,0,0,0.07);
     }
 
     html { scroll-behavior: smooth; }
@@ -71,7 +70,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: rgba(253, 250, 246, 0.82);
+      background: rgba(246, 246, 243, 0.88);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       transition: box-shadow 0.3s;
@@ -116,8 +115,8 @@
       max-width: 1160px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 5rem;
+      grid-template-columns: 1fr 260px;
+      gap: 4rem;
       align-items: center;
       width: 100%;
     }
@@ -131,7 +130,7 @@
       color: var(--ink-muted);
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
 
     .hero-eyebrow::before {
@@ -140,25 +139,44 @@
       width: 28px;
       height: 2px;
       border-radius: 2px;
-      background: var(--coral);
+      background: var(--blue);
     }
 
     .hero-name {
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-weight: 800;
-      font-size: clamp(2.75rem, 5.5vw, 4.5rem);
-      line-height: 1.05;
+      font-size: clamp(3.25rem, 7vw, 5.5rem);
+      line-height: 1.0;
       letter-spacing: -0.04em;
-      margin-bottom: 1.75rem;
+      margin-bottom: 0.75rem;
     }
 
-    .hero-name .accent { color: var(--coral); }
+    .hero-name .accent { color: var(--blue); }
+
+    .hero-occupation {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 600;
+      color: var(--ink-soft);
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.01em;
+    }
 
     .hero-bio {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--ink-soft);
       max-width: 520px;
       line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-quote {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--ink-soft);
+      border-left: 2px solid var(--blue);
+      padding-left: 1rem;
       margin-bottom: 2rem;
     }
 
@@ -180,12 +198,12 @@
       border-radius: 100px;
     }
 
-    .t-coral    { background: #FFE8E8; color: #B91C1C; }
-    .t-teal     { background: #CCFBF1; color: #0D9488; }
-    .t-yellow   { background: #FEF9C3; color: #92400E; }
-    .t-lavender { background: #EDE9FE; color: #6D28D9; }
-    .t-mint     { background: #DCFCE7; color: #15803D; }
-    .t-peach    { background: #FFEDD5; color: #C2410C; }
+    .t-coral    { background: #DBEAFE; color: #1E3A8A; }
+    .t-teal     { background: #D1FAE5; color: #064E3B; }
+    .t-yellow   { background: #FEF3C7; color: #78350F; }
+    .t-lavender { background: #EDE9FE; color: #4C1D95; }
+    .t-mint     { background: #CCFBF1; color: #134E4A; }
+    .t-peach    { background: #FEE2E2; color: #7F1D1D; }
 
     /* CTA buttons */
     .hero-cta { display: flex; gap: 0.875rem; flex-wrap: wrap; }
@@ -217,40 +235,23 @@
       border: 2px solid var(--ink);
     }
 
-    /* Hero photo stack */
+    /* Hero photo */
     .hero-photo {
       position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 480px;
-    }
-
-    .photo-slab {
-      position: absolute;
-      width: 340px;
-      height: 420px;
-      border-radius: var(--radius);
-    }
-
-    .photo-slab-1 {
-      background: var(--yellow);
-      transform: rotate(5deg) translateX(12px);
-    }
-
-    .photo-slab-2 {
-      background: var(--teal);
-      opacity: 0.35;
-      transform: rotate(-3deg) translateX(-8px) translateY(8px);
+      height: 320px;
     }
 
     .photo-frame {
       position: relative;
-      width: 320px;
-      height: 400px;
+      width: 220px;
+      height: 280px;
       border-radius: var(--radius);
       overflow: hidden;
       box-shadow: var(--shadow-lg);
+      opacity: 0.9;
     }
 
     .photo-frame img {
@@ -309,10 +310,10 @@
       box-shadow: var(--shadow-lg);
     }
 
-    .card-coral    { background: var(--coral-light); }
-    .card-teal     { background: var(--teal-light); }
-    .card-yellow   { background: var(--yellow-light); }
-    .card-lavender { background: var(--lavender-light); }
+    .card-coral    { background: var(--blue-light); }
+    .card-teal     { background: var(--green-light); }
+    .card-yellow   { background: var(--amber-light); }
+    .card-lavender { background: var(--violet-light); }
 
     .card-icon {
       width: 48px;
@@ -324,10 +325,10 @@
       margin-bottom: 1.25rem;
     }
 
-    .ci-coral    { background: var(--coral); }
-    .ci-teal     { background: var(--teal); }
-    .ci-yellow   { background: var(--yellow); }
-    .ci-lavender { background: var(--lavender); }
+    .ci-coral    { background: var(--blue); }
+    .ci-teal     { background: var(--green); }
+    .ci-yellow   { background: var(--amber); }
+    .ci-lavender { background: var(--violet); }
 
     .card-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -343,40 +344,17 @@
       line-height: 1.75;
     }
 
-    /* ─── Speaking & Writing ────────────────────────────── */
+    /* ─── Speaking & Writing (unified) ─────────────────── */
     .sw-section { background: var(--bg); }
 
-    .sw-grid {
+    .sw-unified {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
     }
-
-    .sw-col-title {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      font-weight: 700;
-      font-size: 1.375rem;
-      letter-spacing: -0.02em;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 0.625rem;
-    }
-
-    .sw-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-
-    .dot-coral    { background: var(--coral); }
-    .dot-teal     { background: var(--teal); }
-
-    .sw-items { display: flex; flex-direction: column; gap: 0.875rem; }
 
     .sw-item {
-      padding: 1.125rem 1.375rem;
+      padding: 1.25rem 1.5rem;
       background: var(--surface);
       border-radius: var(--radius-sm);
       border-left: 3px solid transparent;
@@ -384,12 +362,25 @@
     }
 
     .sw-item:hover {
-      transform: translateX(5px);
+      transform: translateX(4px);
       box-shadow: var(--shadow-sm);
     }
 
-    .sw-item-coral { border-left-color: var(--coral); }
-    .sw-item-teal  { border-left-color: var(--teal); }
+    .sw-item-coral { border-left-color: var(--blue); }
+    .sw-item-teal  { border-left-color: var(--green); }
+
+    .sw-type {
+      display: inline-block;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .sw-type-speaking { color: var(--blue); }
+    .sw-type-writing  { color: var(--green); }
 
     .sw-item-title {
       font-family: 'Plus Jakarta Sans', sans-serif;
@@ -403,11 +394,17 @@
       color: var(--ink-muted);
     }
 
+    .sw-links {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
     .see-more {
       display: inline-flex;
       align-items: center;
       gap: 0.375rem;
-      margin-top: 1.375rem;
       font-family: 'Plus Jakarta Sans', sans-serif;
       font-size: 0.875rem;
       font-weight: 700;
@@ -436,7 +433,7 @@
       margin-bottom: 1rem;
     }
 
-    .connect-title .accent-yellow { color: var(--yellow); }
+    .connect-title .accent-yellow { color: #34D399; }
 
     .connect-sub {
       font-size: 1.05rem;
@@ -507,6 +504,7 @@
     /* ─── Responsive ────────────────────────────────────── */
     @media (max-width: 1024px) {
       .cards { grid-template-columns: repeat(2, 1fr); }
+      .sw-unified { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 860px) {
@@ -515,15 +513,13 @@
         text-align: center;
       }
 
-      .hero-photo { order: -1; height: 360px; }
-      .photo-slab { width: 260px; height: 320px; }
-      .photo-frame { width: 240px; height: 300px; }
+      .hero-photo { order: -1; height: 260px; }
+      .photo-frame { width: 180px; height: 225px; }
 
       .hero-eyebrow { justify-content: center; }
       .traits       { justify-content: center; }
       .hero-cta     { justify-content: center; }
-
-      .sw-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-quote   { text-align: left; }
     }
 
     @media (max-width: 640px) {
@@ -532,6 +528,7 @@
       .section { padding: 4.5rem 1.5rem; }
       .hero { padding: 8rem 1.5rem 4rem; }
       .cards { grid-template-columns: 1fr; }
+      .sw-unified { grid-template-columns: 1fr; }
       .connect-section { padding: 4.5rem 1.5rem; }
     }
   </style>
@@ -558,15 +555,19 @@
 
         <h1 class="hero-name">
           Jacob<br>
-          Bo Lueg<br>
+          Bo <span class="accent">Lueg</span><br>
           <span class="accent">Tiedemann</span>
         </h1>
+
+        <p class="hero-occupation">Product Leader & Technologist</p>
 
         <p class="hero-bio">
           I craft impactful products and the empowered teams behind them —
           valuing pragmatism and a human-centered approach over silos and dogma.
           I also speak and write about product strategy and socio-technical systems.
         </p>
+
+        <blockquote class="hero-quote">"Value derives from use."</blockquote>
 
         <div class="traits">
           <span class="trait t-coral">Pragmatic</span>
@@ -587,8 +588,6 @@
       </div>
 
       <div class="hero-photo">
-        <div class="photo-slab photo-slab-1"></div>
-        <div class="photo-slab photo-slab-2"></div>
         <div class="photo-frame">
           <img src="img/picture.jpg" alt="Jacob Bo Lueg Tiedemann">
         </div>
@@ -661,64 +660,55 @@
       <p class="section-label">Speaking & Writing</p>
       <h2 class="section-title">Sharing what I learn</h2>
 
-      <div class="sw-grid">
+      <div class="sw-unified">
 
-        <!-- Speaking -->
-        <div>
-          <h3 class="sw-col-title">
-            <span class="sw-dot dot-coral"></span>
-            Speaking
-          </h3>
-
-          <div class="sw-items">
-            <div class="sw-item sw-item-coral reveal">
-              <div class="sw-item-title">Product & Platform Strategy</div>
-              <div class="sw-item-meta">Keynotes · Panels · Workshops</div>
-            </div>
-            <div class="sw-item sw-item-coral reveal">
-              <div class="sw-item-title">Socio-technical Systems</div>
-              <div class="sw-item-meta">Conference talks · Internal sessions</div>
-            </div>
-            <div class="sw-item sw-item-coral reveal">
-              <div class="sw-item-title">Empowered Product Teams</div>
-              <div class="sw-item-meta">Leadership events · Meetups</div>
-            </div>
-          </div>
-
-          <a href="https://speakerdeck.com/jabopiti" class="see-more" target="_blank" rel="noopener">
-            View slide decks
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+        <div class="sw-item sw-item-coral reveal">
+          <span class="sw-type sw-type-speaking">Speaking</span>
+          <div class="sw-item-title">Product & Platform Strategy</div>
+          <div class="sw-item-meta">Keynotes · Panels · Workshops</div>
         </div>
 
-        <!-- Writing -->
-        <div>
-          <h3 class="sw-col-title">
-            <span class="sw-dot dot-teal"></span>
-            Writing
-          </h3>
-
-          <div class="sw-items">
-            <div class="sw-item sw-item-teal reveal">
-              <div class="sw-item-title">Product Strategy & Vision</div>
-              <div class="sw-item-meta">Essays · Frameworks · Perspectives</div>
-            </div>
-            <div class="sw-item sw-item-teal reveal">
-              <div class="sw-item-title">Platform Thinking</div>
-              <div class="sw-item-meta">Deep dives · Mental models</div>
-            </div>
-            <div class="sw-item sw-item-teal reveal">
-              <div class="sw-item-title">Adventures in Tech & People</div>
-              <div class="sw-item-meta">Reflections · Lessons learned</div>
-            </div>
-          </div>
-
-          <a href="https://www.linkedin.com/in/luegtiedemann/" class="see-more" target="_blank" rel="noopener">
-            Read on LinkedIn
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </a>
+        <div class="sw-item sw-item-coral reveal">
+          <span class="sw-type sw-type-speaking">Speaking</span>
+          <div class="sw-item-title">Socio-technical Systems</div>
+          <div class="sw-item-meta">Conference talks · Internal sessions</div>
         </div>
 
+        <div class="sw-item sw-item-coral reveal">
+          <span class="sw-type sw-type-speaking">Speaking</span>
+          <div class="sw-item-title">Empowered Product Teams</div>
+          <div class="sw-item-meta">Leadership events · Meetups</div>
+        </div>
+
+        <div class="sw-item sw-item-teal reveal">
+          <span class="sw-type sw-type-writing">Writing</span>
+          <div class="sw-item-title">Product Strategy & Vision</div>
+          <div class="sw-item-meta">Essays · Frameworks · Perspectives</div>
+        </div>
+
+        <div class="sw-item sw-item-teal reveal">
+          <span class="sw-type sw-type-writing">Writing</span>
+          <div class="sw-item-title">Platform Thinking</div>
+          <div class="sw-item-meta">Deep dives · Mental models</div>
+        </div>
+
+        <div class="sw-item sw-item-teal reveal">
+          <span class="sw-type sw-type-writing">Writing</span>
+          <div class="sw-item-title">Adventures in Tech & People</div>
+          <div class="sw-item-meta">Reflections · Lessons learned</div>
+        </div>
+
+      </div>
+
+      <div class="sw-links">
+        <a href="https://speakerdeck.com/jabopiti" class="see-more" target="_blank" rel="noopener">
+          View slide decks
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/luegtiedemann/" class="see-more" target="_blank" rel="noopener">
+          Read on LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
