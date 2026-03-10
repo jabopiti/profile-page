@@ -54,15 +54,14 @@ Build a personala profile page from scratch to promote my personal brand, showca
 
 #### Core Palette
 
-| Role           | Color       | Hex     |
-| -------------- | ----------- | ------- |
-| Primary        | Deep Indigo | #1E3A8A |
-| Secondary      | Teal        | #0EA5A4 |
-| Accent         | Amber       | #F59E0B |
-| Background     | Soft White  | #FAFAFA |
-| Surface        | Light Gray  | #F3F4F6 |
-| Text Primary   | Charcoal    | #111827 |
-| Text Secondary | Slate       | #6B7280 |
+| Role             | Color           | Hex     |
+| ---------------- | --------------- | ------- |
+| Accent / CTA     | Muted Teal      | #2D6A6A |
+| Background       | Warm Off-white  | #F7F4EF |
+| Surface          | Warm Light Grey | #EDE8DF |
+| Text Primary     | Deep Charcoal   | #1C1C1E |
+| Text Secondary   | Medium Grey     | #6B6B6B |
+| Subtle Dividers  | Light Warm Grey | #E8E2D9 |
 
 #### Color Usage
 
@@ -101,23 +100,26 @@ Provide visual balance and support readability.
 
 #### Primary Typeface
 
-**Lato**
+**Inter**
 
 Chosen for:
 
-* Excellent readability
-* Modern technology aesthetic
-* Strong numeric rendering for metrics
+* Excellent readability at all sizes
+* Clean, modern technology aesthetic
+* Versatile weight range including beautiful italics
+* Body text line-height: 1.75 for comfortable reading
 
-#### Secondary Typeface (Optional)
+#### Display Typeface
 
-**Playfair Display**
+**Space Grotesk**
 
 Used for:
 
-* Hero headlines
-* Section titles
-* Visual emphasis
+* Hero name
+* Section titles and headings
+* Card titles
+* Section labels and small-caps overlines (uppercase, tracked)
+* Geometric character that reinforces the analytical, modern brand personality
 
 ---
 
