@@ -3,22 +3,22 @@
    ========================================= */
 :root {
   /* Brand Colors */
-  --color-primary:       #1E3A8A;
-  --color-primary-hover: #2d52b8;
-  --color-secondary:     #0EA5A4;
+  --color-primary:       #2D6A6A;
+  --color-primary-hover: #235555;
+  --color-secondary:     #2D6A6A;
   --color-accent:        #F59E0B;
 
   /* Neutral Colors */
-  --color-bg:            #FAFAFA;
-  --color-surface:       #F3F4F6;
+  --color-bg:            #F7F4EF;
+  --color-surface:       #EDE8DF;
   --color-white:         #ffffff;
-  --color-border:        #E5E7EB;
-  --color-text:          #111827;
-  --color-text-muted:    #6B7280;
+  --color-border:        #E8E2D9;
+  --color-text:          #1C1C1E;
+  --color-text-muted:    #6B6B6B;
 
   /* Typography */
-  --font-body:    'Lato', system-ui, -apple-system, sans-serif;
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
 
   /* Spacing scale */
   --sp-1: 0.25rem;
@@ -73,7 +73,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.75;
   color: var(--color-text);
   background-color: var(--color-bg);
   -webkit-font-smoothing: antialiased;
@@ -136,17 +136,18 @@ ul {
 
 .section-label {
   display: block;
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-secondary);
-  margin-bottom: var(--sp-2);
+  margin-bottom: var(--sp-3);
 }
 
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
   font-weight: 700;
   line-height: 1.15;
   color: var(--color-text);
@@ -215,7 +216,7 @@ ul {
   left: 0;
   right: 0;
   z-index: 200;
-  background: rgba(250, 250, 250, 0.92);
+  background: rgba(247, 244, 239, 0.92);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid transparent;
@@ -340,7 +341,7 @@ ul {
   right: -10%;
   width: 55%;
   height: 140%;
-  background: radial-gradient(ellipse at 70% 40%, rgba(14,165,164,0.05) 0%, transparent 65%);
+  background: radial-gradient(ellipse at 70% 40%, rgba(45,106,106,0.06) 0%, transparent 65%);
   pointer-events: none;
   z-index: 0;
 }
@@ -379,9 +380,10 @@ ul {
 }
 
 .hero__tagline {
-  font-family: var(--font-display);
-  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   font-style: italic;
+  font-weight: 400;
   color: var(--color-primary);
   line-height: 1.4;
   margin-bottom: var(--sp-6);
@@ -516,10 +518,10 @@ ul {
 .about__text:last-child { margin-bottom: 0; }
 
 .about__skills-title {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   margin-bottom: var(--sp-5);
@@ -604,9 +606,10 @@ ul {
 
 .card__category {
   display: block;
+  font-family: var(--font-display);
   font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-secondary);
   margin-bottom: var(--sp-3);
@@ -622,7 +625,7 @@ ul {
 }
 
 .card__quote {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-style: italic;
   font-size: 1rem;
   color: var(--color-primary);
@@ -664,10 +667,10 @@ ul {
 }
 
 .speaking__subtitle {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-family: var(--font-display);
+  font-size: 0.6875rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-secondary);
   margin-bottom: var(--sp-4);
@@ -738,7 +741,7 @@ ul {
 .contact__content { max-width: 640px; }
 
 .contact__intro {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-style: italic;
   font-size: clamp(1.1rem, 2vw, 1.3rem);
   line-height: 1.7;
