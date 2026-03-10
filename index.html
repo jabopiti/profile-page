@@ -82,7 +82,12 @@
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="home" aria-labelledby="hero-heading">
-      <div class="hero__container">
+
+      <!-- Film grain texture -->
+      <div class="hero__grain" aria-hidden="true"></div>
+
+      <!-- Left: text content -->
+      <div class="hero__left">
         <div class="hero__content">
           <p class="hero__eyebrow">Product Leader &amp; Technologist &nbsp;·&nbsp; Hamburg, Germany</p>
           <h1 class="hero__name" id="hero-heading">
@@ -99,23 +104,24 @@
             <a href="#portfolio" class="btn btn--primary">View Portfolio</a>
           </div>
         </div>
-        <div class="hero__visual">
-          <div class="hero__photo-frame">
-            <img
-              src="img/foto_headshot.jpg"
-              alt="Jacob Bo Lueg Tiedemann"
-              class="hero__photo"
-              width="420"
-              height="420"
-              loading="eager"
-            >
-          </div>
-        </div>
       </div>
+
+      <!-- Right: full-bleed photo -->
+      <div class="hero__right" aria-hidden="true">
+        <img
+          src="img/foot_large.jpeg"
+          alt=""
+          class="hero__photo"
+          loading="eager"
+        >
+        <div class="hero__blend"></div>
+      </div>
+
       <div class="hero__scroll-hint" aria-hidden="true">
         <span>Scroll</span>
         <div class="hero__scroll-line"></div>
       </div>
+
     </section>
 
     <!-- ===== ABOUT ===== -->
