@@ -742,7 +742,7 @@ ul {
 .topic-icon {
   display: flex;
   align-items: center;
-  color: var(--color-secondary);
+  color: var(--color-white);
   flex-shrink: 0;
 }
 
