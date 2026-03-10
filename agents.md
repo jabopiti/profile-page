@@ -11,6 +11,7 @@ Build a personala profile page from scratch to promote my personal brand, showca
 - SEO optimized
 - Clean code
 - Cross-browser compatability
+- Runs on Github Pages
 
 ## Structure
 - Hero section: This is the top section of the homepage and the first thing visitors see: my name, short title/tagline, location, brief description, profile photo, call to-action buttons
