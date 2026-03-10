@@ -208,12 +208,14 @@ ul {
 }
 
 .btn--speaking-cta {
+  background-color: transparent;
+  color: var(--color-white);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+.btn--speaking-cta:hover {
   background-color: var(--color-white);
   color: var(--color-primary);
   border-color: var(--color-white);
-}
-.btn--speaking-cta:hover {
-  background-color: rgba(255, 255, 255, 0.88);
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
