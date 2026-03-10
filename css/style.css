@@ -153,6 +153,29 @@ ul {
   color: var(--color-text);
 }
 
+.section-quote {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.15em;
+  margin-top: var(--sp-5);
+  padding-left: var(--sp-4);
+  border-left: 3px solid var(--color-primary);
+  font-family: var(--font-body);
+  font-style: italic;
+}
+
+.section-quote__primary {
+  font-size: 1.125rem;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+.section-quote__secondary {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-primary);
+}
+
 /* =========================================
    Buttons
    ========================================= */
